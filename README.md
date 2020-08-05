@@ -23,4 +23,5 @@ curl -H "Content-Type: application/json" http://localhost:8080/
 ### 针对k8s进行配置
 
 - [`Dockerfile`](./Dockerfile)
-- 数据库从环境变量配置
+- 数据库从环境变量配置 [`config.php`](https://github.com/postor/yii2-k8s-example/commit/3f5d052d03369b1241ea4eac089c7941336a763a)
+- [docker-compose.yml]
