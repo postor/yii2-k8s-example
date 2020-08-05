@@ -1,7 +1,11 @@
-version: '2.0'
+version: "2.0"
 services:
   post:
     image: postor/yii2-k8s-example
     build: .
     ports:
-    - "8080:80"
+      - "8080:80"
+    environment:
+      - DB_DSN=mysql:host=remotemysql.com;dbname=N9B54G8Bry
+      - DB_USERNAME=N9B54G8Bry
+      - DB_PASSWORD=vUQpRxWJpF

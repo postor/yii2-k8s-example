@@ -1,8 +1,6 @@
 <?php
 
-$DSN = getenv('DSN')?getenv('DSN'):'sqlite:@micro/database.sqlite';
-
-return [
+$config = [
   'id' => 'micro-app',
   // the basePath of the application will be the `micro-app` directory
   'basePath' => __DIR__,
@@ -15,13 +13,20 @@ return [
   'components' => [
     'db' => [
       'class' => 'yii\db\Connection',
-      'dsn' => $DSN,
+      'dsn' => getenv('DB_DSN') ? getenv('DB_DSN') : 'sqlite:@micro/database.sqlite',
+      'username' => getenv('DB_USERNAME'),
+      'password' => getenv('DB_PASSWORD'),
     ],
-    'request' => [
-      'parsers' => [
-        'application/json' => 'yii\web\JsonParser',
-      ]
-    ],
-  ],  
+  ],
   'defaultRoute' => 'post',
 ];
+
+if (defined('IS_WEB') && IS_WEB) {
+  $config['components']['request'] = [
+    'parsers' => [
+      'application/json' => 'yii\web\JsonParser',
+    ]
+  ];
+}
+
+return $config;
