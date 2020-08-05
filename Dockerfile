@@ -7,3 +7,5 @@ COPY composer.* ./
 RUN composer install --no-interaction
 
 COPY . .
+
+CMD bash -c "vendor/bin/yii migrate/up --appconfig=config.php --interactive=0 && apache2-foreground"
