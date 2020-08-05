@@ -22,4 +22,5 @@ curl -H "Content-Type: application/json" http://localhost:8080/
 
 ### 针对k8s进行配置
 
-- Dockerfile
+- [`Dockerfile`](./Dockerfile)
+- 数据库从环境变量配置

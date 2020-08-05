@@ -1,4 +1,4 @@
-FROM yiisoftware/yii2-php
+FROM yiisoftware/yii2-php:7.2-apache
 
 WORKDIR /app
 
