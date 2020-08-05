@@ -1,4 +1,7 @@
 <?php
+
+$DSN = getenv('DSN')?getenv('DSN'):'sqlite:@micro/database.sqlite';
+
 return [
   'id' => 'micro-app',
   // the basePath of the application will be the `micro-app` directory
@@ -12,7 +15,7 @@ return [
   'components' => [
     'db' => [
       'class' => 'yii\db\Connection',
-      'dsn' => 'sqlite:@micro/database.sqlite',
+      'dsn' => $DSN,
     ],
     'request' => [
       'parsers' => [
