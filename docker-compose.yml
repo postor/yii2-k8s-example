@@ -1,4 +1,4 @@
-version: "2.0"
+version: "2"
 services:
   post:
     image: postor/yii2-k8s-example
